@@ -1,0 +1,10 @@
+FROM wordpress:latest
+
+RUN { \
+    echo 'upload_max_filesize = 1G'; \
+    echo 'post_max_size = 1G'; \
+    echo 'memory_limit = 512M'; \
+    echo 'max_execution_time = 300'; \
+    echo 'file_uploads = On'; \
+    echo 'max_input_time = 600'; \
+} > /usr/local/etc/php/conf.d/uploads.ini
